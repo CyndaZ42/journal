@@ -5,15 +5,25 @@
 </head>
 <body>
   <div class="container">
-
-    <form id="entry">
-      <label for="title">Title</label>
-      <input type="text" id="title">
-      <label for="body">Body</label>
-      <input type="text" id="body">
-      <button type="submit">New Entry</button>
-    </form>
-
+    <div>
+      <form id="entry">
+        <label for="title">Title</label>
+        <input type="text" id="title">
+        <label for="body">Body</label>
+        <input type="text" id="body">
+        <button type="submit" class="btn btn-dark">New Entry</button>
+      </form>
+    </div>
+    <div>
+      <h4>Title: <span id="submittedTitle"></span></h4>
+      <div id="submittedTextBody"></div>
+      <div>
+        <p>teaser: <span id="teaser"></span></p>
+        <p>word count: <span id="wordCount"></span></p>
+        <p>vowel count: <span id="vowelCount"></span></p>
+        <p>consonant count: <span id="consonantCount"></span></p>
+      </div>
+    </div>
   </div>
 </body>
 </html>

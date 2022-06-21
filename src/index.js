@@ -2,14 +2,24 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import '/js/entry.js';
-import '/js/vowels.js';
+import Entry from './js/entry.js';
+import './js/vowels.js';
 
 
 $("form#entry").submit(function(event) {
   event.preventDefault();
   const title = $("input#title").val();
   const body = $("input#body").val();
+
+  const journalEntry = new Entry(title, body);
+  const wordCount = journalEntry.wordCounter();
+  
+  $('#submittedTitle').text(journalEntry.title);
+  $('#submittedTextBody').text(journalEntry.text);
+  $('#wordCount').text(wordCount);
+  $('#vowelCount').text(journalEntry.vowelCount());
+  $('#consonantCount').text(journalEntry.consonantCount());
+  $('#teaser').text(journalEntry.getTeaser());
 });
 
 

@@ -1,4 +1,4 @@
-# _{Application Name}_
+# _Journal_
 
 #### By _**Zac Waggoner**_, _**Seung Lee**_
 
@@ -29,6 +29,47 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * _Any known issues_
 * _should go here_
 
+## TDD
+
+>Describe: Entry(title, text)
+>
+>Test: Creates an object with a title and body text.  
+>Code: newEntry = new Entry("Hello", "Hello world. This is me.");  
+>Output: newEntry { title: "Hello", text: "Hello world. This is me." }  
+
+>Describe: wordCounter()
+>
+>Test: returns the word count of the body text of an Entry object
+>Code: newEntry = new Entry("Hello", "Hello world. This is me.");  
+>newEntry.wordCounter();  
+>Output: 5  
+
+>Describe: vowelCount()
+>
+>Test: returns the number of vowels of the body text of an Entry object
+>Code: newEntry = new Entry("Hello", "Hello world. This is me.");  
+>newEntry.vowelCount();  
+>Output: 6
+
+>Describe: consonantCount()
+>
+>Test: returns the number of consonants of the body text of an Entry object
+>Code: newEntry = new Entry("Hello", "Hello world. This is me.");  
+>newEntry.consonantCount();  
+>Output: 12
+
+>Describe: getTeaser()
+>
+>Test: returns the first sentence of body text of an Entry object. If sentence is longer than 8 words then only returns first 8 words
+>Code: newEntry = new Entry("Hello", "Hello world. This is me.");  
+>newEntry.getTeaser();  
+>Output: "Hello world."
+
+>Test: returns the first sentence of body text of an Entry object. If sentence is longer than 8 words then only returns first 8 words
+>Code: newEntry = new Entry("Princess Bride", "Hello, my name is Inigo Montoya, you killed my father, prepare to die.");  
+>newEntry.getTeaser();  
+>Output: "Hello, my name is Inigo Montoya, you killed"
+
 ## License
 
 Copyright (c) _2022_ _Zac Waggoner_
@@ -38,39 +79,3 @@ _Permission is hereby granted, free of charge, to any person obtaining a copy of
 _The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software._
 
 _THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE._
-
-
-
-Describe: luhn_algorithm()
-
-test: returns string as array
-code: const card = "0998445533334452";
-luhn_algorithm(card);
-output: ["0", "9", "9", "8", "4", "4", "5", "5", "3", "3", "3", "3", "4", "4", "5", "2"]
-
-
-
-test: returns reversed string
-code: const card = "0998445533334452";
-luhn_algorithm(card);
-output:  ['2', '5', '4', '4', '3', '3', '3', '3', '5', '5', '4', '4', '8', '9', '9', '0']
-
-test: parse integers from strings
-code: const card = "0998445533334452";
-luhn_algorithm(card);
-output:  [2, 5, 4, 4, 3, 3, 3, 3, 5, 5, 4, 4, 8, 9, 9, 0]
-
-test: double every other digit
-code: const card = "0998445533334452";
-luhn_algorithm(card);
-output: [4, 5, 8, 4, 6, 3, 6, 3, 10, 5, 8, 4, 16, 9, 18, 0]
-
-test: combine digits of numbers > 9
-code: const card = "0998445533334452";
-luhn_algorithm(card);
-output:  [4, 5, 8, 4, 6, 3, 6, 3, 4, 5, 8, 4, 1, 9, 0, 0]
-
-test: reverse order of digits back to original
-code: const card = "0998445533334452";
-luhn_algorithm(card);
-output: [0, 0, 4, 8, 3, 6, 4, 8, 4, 5, 6, 3, 4, 5, 1, 9]
