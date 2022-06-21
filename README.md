@@ -70,6 +70,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 >newEntry.getTeaser();  
 >Output: "Hello, my name is Inigo Montoya, you killed"
 
+hi
 ## License
 
 Copyright (c) _2022_ _Zac Waggoner_
